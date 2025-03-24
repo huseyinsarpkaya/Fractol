@@ -6,7 +6,7 @@
 /*   By: husarpka <husarpka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 15:27:09 by husarpka          #+#    #+#             */
-/*   Updated: 2025/03/24 04:00:05 by husarpka         ###   ########.fr       */
+/*   Updated: 2025/03/24 16:55:46 by husarpka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,18 @@ typedef struct s_data {
 	double	max_re;
 	double	min_im;
 	double	max_im;
-	double	zoom;
+	double re;
+	double im;
+	
 }	t_data;
+int julia_calculate_pixel_color(t_data *data, int x, int y);
+double ft_atod(const char *str);
+int set_julia(t_data *data);
+void julia(t_data *data);
+int julia_mouse_zoom(int button, int x, int y, t_data *data);
+int mandelbrot_calculate_pixel_color(t_data *data, int x, int y);
+int set_mandelbrot(t_data *data);
+int ft_error(void);
 int calculate_pixel_color(t_data *data, int x, int y);
 int ft_mlx_function(t_data *data);
 void ft_value(t_data *data);

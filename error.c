@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   color.c                                            :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: husarpka <husarpka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/24 04:00:42 by husarpka          #+#    #+#             */
-/*   Updated: 2025/03/24 15:41:54 by husarpka         ###   ########.fr       */
+/*   Created: 2025/03/24 13:36:48 by husarpka          #+#    #+#             */
+/*   Updated: 2025/03/24 13:52:32 by husarpka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+#include <stdlib.h>
+#include <unistd.h>
 
-int color(int iter)
+int ft_error(void)
 {
-	int red = (iter * 9) % 256;
-	int green = (iter * 7) % 256;
-	int blue = (iter * 14) % 256;
-	return (red << 16) | (green << 8) | blue;
+    write(1,"Error\n",6);
+    exit(0);
 }
-
-

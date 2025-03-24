@@ -6,7 +6,7 @@
 /*   By: husarpka <husarpka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 23:49:25 by husarpka          #+#    #+#             */
-/*   Updated: 2025/03/24 03:50:50 by husarpka         ###   ########.fr       */
+/*   Updated: 2025/03/24 15:50:33 by husarpka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,41 @@ void ft_value(t_data *data)
 	data->max_re = 2.0;
 	data->min_im = -2.0;
 	data->max_im = 2.0;
-	//data->zoom = 1.0;
 	return ;
+}
+
+double ft_atod(const char *str)
+{
+    double result = 0.0;
+    double fraction = 0.0;
+    double divisor = 10.0;
+    int sign = 1;
+
+    while (*str == ' ' || *str == '\t')
+        str++;
+    if (*str == '-')
+    {
+        sign = -1;
+        str++;
+    }
+    else if (*str == '+')
+        str++;
+    while (*str >= '0' && *str <= '9')
+    {
+        result = result * 10.0 + (*str - '0');
+        str++;
+    }
+    if (*str == '.')
+    {
+        str++;
+        while (*str >= '0' && *str <= '9')
+        {
+            fraction += (*str - '0') / divisor;
+            divisor *= 10.0;
+            str++;
+        }
+    }
+    if (*str != '\0')
+        ft_error();
+    return sign * (result + fraction);
 }

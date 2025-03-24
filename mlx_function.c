@@ -6,7 +6,7 @@
 /*   By: husarpka <husarpka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 01:33:14 by husarpka          #+#    #+#             */
-/*   Updated: 2025/03/24 02:18:44 by husarpka         ###   ########.fr       */
+/*   Updated: 2025/03/24 15:53:34 by husarpka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int ft_mlx_function(t_data *data)
 	data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
 	if(!data->img)
 		ft_free_memory(data);
-	data->win = mlx_new_window(data->mlx, WIDTH, HEIGHT, "Mandelbrot Fractal");
+	data->win = mlx_new_window(data->mlx, WIDTH, HEIGHT, "Fractal");
 	if (!data->win)
 		ft_free_memory(data);
 	data->addr = mlx_get_data_addr(data->img, &data->bpp, &data->line_length, &data->endian);
