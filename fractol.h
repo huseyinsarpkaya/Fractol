@@ -6,13 +6,17 @@
 /*   By: husarpka <husarpka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 15:27:09 by husarpka          #+#    #+#             */
-/*   Updated: 2025/03/23 07:05:27 by husarpka         ###   ########.fr       */
+/*   Updated: 2025/03/24 04:00:05 by husarpka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 # include "minilibx-linux/mlx.h"
+
+#define WIDTH 400
+#define HEIGHT 400
+#define MAX_ITER 300
 
 typedef struct s_data {
 	void	*mlx;
@@ -28,11 +32,15 @@ typedef struct s_data {
 	double	max_im;
 	double	zoom;
 }	t_data;
-
+int calculate_pixel_color(t_data *data, int x, int y);
+int ft_mlx_function(t_data *data);
+void ft_value(t_data *data);
+int ft_strcmp(char *s1, char *s2);
 int mouse_zoom(int button, int x, int y, t_data *data);
-int key_hook(int keycode, void *param);
-int close_window(void *param);
+int key_hook(int keycode, t_data *data);
+int close_window(t_data *data);
 int color(int iter);
 void mandelbrot(t_data *data) ;
+int ft_free_memory(t_data *data);
 #endif 
 

@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror
 MLX_PATH = ./minilibx-linux
 MLX_FLAGS = -L $(MLX_PATH) -lmlx -lXext -lX11 -lm
 
-SRC = main.c
+SRC = main.c utils.c free_memory.c mlx_function.c hook_operation.c color.c
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
