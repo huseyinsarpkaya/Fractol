@@ -6,7 +6,7 @@
 /*   By: husarpka <husarpka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:36:48 by husarpka          #+#    #+#             */
-/*   Updated: 2025/03/24 13:52:32 by husarpka         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:17:06 by husarpka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int ft_error(void)
+int	ft_error(void)
 {
-    write(1,"Error\n",6);
-    exit(0);
+	write(1, "Error\n", 6);
+	exit(0);
 }

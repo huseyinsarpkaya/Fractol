@@ -6,17 +6,11 @@
 /*   By: husarpka <husarpka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 15:26:27 by husarpka          #+#    #+#             */
-/*   Updated: 2025/03/24 15:49:01 by husarpka         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:43:26 by husarpka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-#include "stdlib.h"
-#include <unistd.h>
-#include <stdio.h>
-#include <math.h>
-
-
 
 int main(int argc, char **argv)
 {
@@ -35,7 +29,6 @@ int main(int argc, char **argv)
             set_julia(&data);
         }
     }
-	else
-        ft_error();
-	return 0;
+    ft_error();
+	return (0);
 }

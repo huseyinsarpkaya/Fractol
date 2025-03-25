@@ -6,7 +6,7 @@
 /*   By: husarpka <husarpka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 15:27:09 by husarpka          #+#    #+#             */
-/*   Updated: 2025/03/24 16:55:46 by husarpka         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:01:38 by husarpka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #define WIDTH 400
 #define HEIGHT 400
-#define MAX_ITER 300
+#define MAX_ITER 200
 
 typedef struct s_data {
 	void	*mlx;
@@ -32,6 +32,11 @@ typedef struct s_data {
 	double	max_im;
 	double re;
 	double im;
+	double	c_re;
+	double	c_im;
+	double	z_re;
+	double	z_im;
+	
 	
 }	t_data;
 int julia_calculate_pixel_color(t_data *data, int x, int y);

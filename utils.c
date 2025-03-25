@@ -6,7 +6,7 @@
 /*   By: husarpka <husarpka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 23:49:25 by husarpka          #+#    #+#             */
-/*   Updated: 2025/03/24 15:50:33 by husarpka         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:12:56 by husarpka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,38 +34,66 @@ void ft_value(t_data *data)
 	return ;
 }
 
+double parse_integer_part(const char **str)
+{
+    double result;
+
+	result = 0.0;
+    while (**str >= '0' && **str <= '9')
+    {
+        result = result * 10.0 + (**str - '0');
+        (*str)++;
+    }
+    return result;
+}
+
+double parse_fractional_part(const char **str)
+{
+    double fraction;
+    double divisor;
+    
+	fraction = 0.0;
+	divisor = 10.0;
+    if (**str == '.')
+    {
+        (*str)++;
+        while (**str >= '0' && **str <= '9')
+        {
+            fraction += (**str - '0') / divisor;
+            divisor *= 10.0;
+            (*str)++;
+        }
+    }
+    return fraction;
+}
+
+
 double ft_atod(const char *str)
 {
-    double result = 0.0;
-    double fraction = 0.0;
-    double divisor = 10.0;
-    int sign = 1;
+    double result;
+    double fraction;
+    int sign;
 
+	result = 0.0;
+	fraction = 0.0;
+	sign = 1;
     while (*str == ' ' || *str == '\t')
         str++;
-    if (*str == '-')
+    if (*str == '-' )
     {
         sign = -1;
         str++;
     }
     else if (*str == '+')
         str++;
-    while (*str >= '0' && *str <= '9')
-    {
-        result = result * 10.0 + (*str - '0');
-        str++;
-    }
-    if (*str == '.')
-    {
-        str++;
-        while (*str >= '0' && *str <= '9')
-        {
-            fraction += (*str - '0') / divisor;
-            divisor *= 10.0;
-            str++;
-        }
-    }
+    if (*str == '\0')
+        ft_error();
+    result = parse_integer_part(&str);
+    if (*str == '.' && (*(str + 1) < '0' || *(str + 1) > '9'))
+        ft_error();
+    fraction = parse_fractional_part(&str);
     if (*str != '\0')
         ft_error();
-    return sign * (result + fraction);
+    return (sign * (result + fraction));
 }
+
