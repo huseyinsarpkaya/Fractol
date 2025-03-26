@@ -6,7 +6,7 @@
 /*   By: husarpka <husarpka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 23:49:25 by husarpka          #+#    #+#             */
-/*   Updated: 2025/03/25 16:12:56 by husarpka         ###   ########.fr       */
+/*   Updated: 2025/03/26 01:22:12 by husarpka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ void ft_value(t_data *data)
 	data->max_re = 2.0;
 	data->min_im = -2.0;
 	data->max_im = 2.0;
+	data->c_im = 0;
+	data->z_im = 0;
+	data->c_re = 0;
+	data->z_re = 0;
 	return ;
 }
 

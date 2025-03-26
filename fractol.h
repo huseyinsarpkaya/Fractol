@@ -6,7 +6,7 @@
 /*   By: husarpka <husarpka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 15:27:09 by husarpka          #+#    #+#             */
-/*   Updated: 2025/03/25 17:01:38 by husarpka         ###   ########.fr       */
+/*   Updated: 2025/03/26 03:37:44 by husarpka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ int ft_mlx_function(t_data *data);
 void ft_value(t_data *data);
 int ft_strcmp(char *s1, char *s2);
 int mouse_zoom(int button, int x, int y, t_data *data);
-int key_hook(int keycode, t_data *data);
+int key_hook_mandelbrot(int keycode, t_data *data);
+int	key_hook_julia(int keycode, t_data *data);
 int close_window(t_data *data);
 int color(int iter);
 void mandelbrot(t_data *data) ;
